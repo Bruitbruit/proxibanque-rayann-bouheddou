@@ -1,5 +1,5 @@
 package com.proxibanque.proxibanque.entity;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
@@ -19,6 +19,7 @@ public abstract class Compte {
     private LocalDate dateOuvertureCompte;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "id_client")
     private Client client;
 
